@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Navbar,Container, Button } from 'react-bootstrap';
+import Body from './components/Body';
 
-function App() {
+const App = () => {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+     <Navbar bg='dark'  variant='dark'>
+     <Container style={{rowGap:'0'}}>
+     <Navbar.Brand href='/' >Home</Navbar.Brand>
+     <Navbar.Brand href='/' >STORE</Navbar.Brand>
+     <Navbar.Brand href='/' >ABOUT</Navbar.Brand>
+     
+
+    </Container>
+    <Button variant="outline-light">CART</Button>
+
+    
+    
+     </Navbar>
+     <Body/>
+    </>
+  )
 }
 
-export default App;
+export default App
