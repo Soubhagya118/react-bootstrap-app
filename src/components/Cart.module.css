@@ -12,37 +12,39 @@
     background-color: white;
     width: 50%;
     float: right;
-    height: 520px;
+    height: auto;
+    max-height: 520px;
     overflow: auto;
     margin-top: 40px;
     padding: 20px;
 }
 .cont{
     display: flex;
-    border:2px solid yellowgreen;
-    gap: 5%;
+    /* border:2px solid yellowgreen; */
+   gap: 5%;
 
 
 }
 .imgcont{
     text-align: center;
     width: 50%;
-    border: 4px solid red ;
+    /* border: 4px solid red ; */
+    /* border-bottom: 1px solid black; */
     padding: 5px;
     
 
 }.price{
     text-align: center;
     width: 50%;
-    border: 4px solid red ;
+    /* border: 4px solid red ; */
     padding: 5px;
 }
 .quantity{
     text-align: center;
     width: 50%;
-    border: 4px solid red ;
+    /* border: 4px solid red; */
     padding: 5px;
-   
+
 }
 
 .img{
@@ -50,17 +52,30 @@
     height: 100px;
     margin-top: 10px;
     
+    
+    border-bottom: 1px solid black;
+
+    
 }.price1{
     width:100%;
     height: 100px;
     margin-top: 10px;
+    /* border: 2px solid black; */
+
+    border-bottom: 1px solid black;
+
+
 }
 .quantity1{
     width:100%;
     height: 100px;
     margin-top: 10px;
     display: flex;
-    gap: 30%;
+    gap: 20%;
+    /* border: 2px solid black; */
+
+    border-bottom: 1px solid black;
+
 }
 .btn{
     width: 60%;

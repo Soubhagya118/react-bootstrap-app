@@ -4,8 +4,11 @@ import Body from './components/Body';
 import classes from './App.module.css'
 import Cart from './components/Cart';
 import CartContextProvider from './components/store/CartContextProvider';
+import HeaderCart from './components/store/HeaderCart';
 
 const App = () => {
+
+
   const [showCart,setShowcart] = useState(false);
   const hideCartFn=()=>{
     setShowcart(false);
@@ -25,8 +28,8 @@ const App = () => {
      <Navbar.Brand href='/' >Home</Navbar.Brand>
      <Navbar.Brand href='/' >STORE</Navbar.Brand>
      <Navbar.Brand href='/' >ABOUT</Navbar.Brand>
-     <Button variant="outline-light" onClick={showCartFn}>CART</Button>
-
+     
+    <HeaderCart showCart={showCartFn}/>
 
     </Container>
 

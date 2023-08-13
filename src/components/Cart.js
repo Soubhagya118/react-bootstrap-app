@@ -1,59 +1,45 @@
-import React from 'react';
-import { cartElements } from './store/CartItems';
+import React, {useContext} from 'react';
+import CartContext from './store/CartContext';
 import { Button, Card, Col, Container, Row, Table } from 'react-bootstrap';
 import classes from './Cart.module.css'
 
 const Cart = (props) => {
+  const cartContext = useContext(CartContext);
+
   return (
     <div className={classes.modal}>
 <div className={classes.table}>
-<h2 style={{textAlign:'center'}}>CART</h2>
+<h2 style={{textAlign:'center',fontSize:'30px',fontFamily: "Metal Mania"}}>CART</h2>
 
 <div className={classes.cont}>
 
 
       <div className={classes.imgcont}>
-      <h3>ITEM</h3>
-      {cartElements.map((e,i)=><img src={e.imageUrl} key={i} className={classes.img}/>)}
+      <h4>ITEM</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.map((e,i)=><img src={e.imageUrl} key={i} className={classes.img}/>)}
       </div>
 
       <div className={classes.price}>
-      <h3>PRICE</h3>
-      {cartElements.map((e,i)=><p key={i} className={classes.price1}>{e.price}</p>)}
+      <h4>PRICE</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.map((e,i)=><div key={i} className={classes.price1}>$ {e.price}</div>)}
       </div>
 
       <div className={classes.quantity}>
-      <h3>QUANTITY</h3>
-      {cartElements.map((e,i)=><div key={i} className={classes.quantity1}>
-      <p>{e.quantity}</p>
+      <h4>QUANTITY</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.map((e,i)=>
+      <div key={i} className={classes.quantity1}>
+      <form>
+      <input defaultValue={e.quantity} style={{width:'30px',textAlign:'center',marginTop:'3px'}}/>
+      
+      </form>
       <Button variant='danger' className={classes.btn}>REMOVE</Button>
       </div>)}
+  </div>
 
 </div>
 
-</div>
-{/* 
-<table >
-
-                    <thead>
-                        <tr>
-                            <th>ITEM</th>
-                            <th>PRICE</th>
-                            <th>QUANTITY</th>
-                        </tr>
-                        <tbody>
-                        {cartElements.map((e)=>
-                        <tr key={Math.random()}>
-                        <td><Card.Img src={e.imageUrl}/></td>
-                            <td><Card.Text>$ {e.price}</Card.Text></td>
-                            <td> {e.quantity} <Button variant="danger">REMOVE</Button></td>
-
-                        </tr>
-                          )}
-                        </tbody>
-                    </thead>
-                </table> */}
-                <Button onClick={props.hideCartFn} >CLOSE</Button>
+<h4>TOTAL AMOUNT:-  ${cartContext.totalAmount}</h4>
+                <Button onClick={props.hideCartFn} style={{marginRight:'69.7%'}} >CLOSE</Button>
                 <Button >PURCHASE</Button>
 
 
