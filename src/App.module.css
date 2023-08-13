@@ -1,0 +1,48 @@
+.container{
+  width:'100%';
+  left:'0';
+  right:'0';
+  top:'0';
+  border:'4px solid black'
+}
+
+.h1{
+
+  font-size: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+  display: block;
+  text-align: center;
+  margin-block-start: 1px;
+  margin-block-end: 1px ;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  color: white;
+  background: rgb(119, 119, 119);
+  
+}
+.h2{
+  text-align: center;
+  font-family: "Metal Mania";
+  font-size: 30px;
+padding: 20px;
+margin-block-start: 0.83em;
+
+
+}
+.customename{
+margin-left: 80px;
+}
+
+.navbar{
+  width:100%;
+
+  border: 10px solid red;
+  right: 0;
+  left: 0;
+  
+
+}

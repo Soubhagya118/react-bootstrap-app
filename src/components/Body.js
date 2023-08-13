@@ -10,13 +10,12 @@ const Counter=()=>{
     return(
 
         <>
-            <Container style={{width:'90%', margin:'auto'}}>
-            <ul style={{width:'800px',display:'flex',flexDirection:'row-reverse'
-}}>
-            {productsArr.map((e)=><EachProduct key={Math.random()} {...e}></EachProduct>)}
+            <Container style={{width:'60%',border:'2px solid red', marginLeft:'auto'}}>
+            <Row>
+            {productsArr.map((e,i)=><Col key={Math.random()} md={6} ><EachProduct id={`Album ${i+1}`} {...e}/></Col>)}
 
 
-            </ul>
+            </Row>
             </Container>
         </>
     )
