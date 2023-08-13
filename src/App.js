@@ -3,6 +3,7 @@ import { Navbar,Container, Button } from 'react-bootstrap';
 import Body from './components/Body';
 import classes from './App.module.css'
 import Cart from './components/Cart';
+import CartContextProvider from './components/store/CartContextProvider';
 
 const App = () => {
   const [showCart,setShowcart] = useState(false);
@@ -14,6 +15,9 @@ const App = () => {
   }
   
   return (
+    <CartContextProvider>
+
+   
     <div className={classes.container}>
     {showCart&&<Cart hideCartFn={hideCartFn}/>}
      <Navbar bg='dark'  variant='dark' expand='lg' className={classes.navbar}>
@@ -36,6 +40,7 @@ const App = () => {
      </Container>
     
     </div>
+    </CartContextProvider>
   )
 }
 
