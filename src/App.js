@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { Children, useState } from 'react';
+import { createBrowserRouter , Outlet, RouterProvider} from 'react-router-dom';
 import { Navbar,Container, Button } from 'react-bootstrap';
 import Body from './components/Body';
 import classes from './App.module.css'
 import Cart from './components/Cart';
 import CartContextProvider from './components/store/CartContextProvider';
-import HeaderCart from './components/store/HeaderCart';
+import HeaderCart from './components/Header/HeaderCart';
+import About from './components/About/About';
+import Generic from './components/Generic/Generic';
+import Header from './components/Header/Header';
 
 const App = () => {
 
@@ -23,28 +27,45 @@ const App = () => {
    
     <div className={classes.container}>
     {showCart&&<Cart hideCartFn={hideCartFn}/>}
-     <Navbar bg='dark'  variant='dark' expand='lg' className={classes.navbar}>
-     <Container style={{rowGap:'0'}}>
-     <Navbar.Brand href='/' >Home</Navbar.Brand>
-     <Navbar.Brand href='/' >STORE</Navbar.Brand>
-     <Navbar.Brand href='/' >ABOUT</Navbar.Brand>
-     
-    <HeaderCart showCart={showCartFn}/>
-
-    </Container>
-
-    
-    
-     </Navbar>
-     <h1 className={classes.h1}>The Generic</h1>
+    <Header className={classes.navbar} showCartFn={showCartFn}/>
+  
+     <Generic className={classes.h1}/>
      <Container>
      <h2 className={classes.h2}>MUSIC</h2>
-     <Body/>
+     <Outlet/>
      </Container>
     
     </div>
+  
     </CartContextProvider>
   )
+};
+
+
+
+const router=createBrowserRouter(
+  [{
+  path:'/',
+  element:<App/>,
+  children:[
+    {
+        path: "/store",
+        element: <Body/>,
+        
+     },
+    {
+        path: "/about",
+        element: <About/>,
+        
+}
+]
+}]
+);
+
+const AppLayout =()=>{
+  return<RouterProvider router={router}>
+
+  </RouterProvider>
 }
 
-export default App
+export default AppLayout
