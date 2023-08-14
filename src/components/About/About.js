@@ -1,10 +1,12 @@
 import React from 'react';
 import { Card, Button,Image } from 'react-bootstrap';
+import Generic from '../Generic/Generic';
 
 const About = () => {
   return (
+    <><Generic/>
     <Card style={{ width:'80%',margin:'auto'}}>
-    <Card.Title style={{fontFamily:'Metal Mania', textAlign:'center'}}>ABOUT</Card.Title>
+    <Card.Title style={{fontFamily:'Metal Mania', textAlign:'center',fontSize:'30px'}}>ABOUT</Card.Title>
 
       <Card.Body style={{display:'flex'}}>
       <Image style={{width:'200px',height:'200px'}} src="https://prasadyash2411.github.io/ecom-website/img/Band%20Members.png" roundedCircle />
@@ -21,7 +23,7 @@ const About = () => {
         </Card.Text>
         
       </Card.Body>
-      </Card>
+      </Card></>
   )
 }
 

@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import classes from './Generic.module.css'
 
-const Generic = (props) => {
+const Generic = ({children}) => {
   return (
-    <h1 className={props.className}>The Generic</h1>
+    <h1 className={classes.h1}>
+   
+    The Generic {children}</h1>
   )
 }
 

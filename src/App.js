@@ -1,14 +1,14 @@
 import React, { Children, useState } from 'react';
 import { createBrowserRouter , Outlet, RouterProvider} from 'react-router-dom';
-import { Navbar,Container, Button } from 'react-bootstrap';
-import Body from './components/Body';
+import { Container } from 'react-bootstrap';
+import Body from './components/Body/Body';
 import classes from './App.module.css'
-import Cart from './components/Cart';
+import Cart from './components/Cart/Cart';
 import CartContextProvider from './components/store/CartContextProvider';
-import HeaderCart from './components/Header/HeaderCart';
 import About from './components/About/About';
 import Generic from './components/Generic/Generic';
 import Header from './components/Header/Header';
+import Home from './components/Home/Home';
 
 const App = () => {
 
@@ -27,14 +27,11 @@ const App = () => {
    
     <div className={classes.container}>
     {showCart&&<Cart hideCartFn={hideCartFn}/>}
+    {/* ========================================================Header================================== */}
     <Header className={classes.navbar} showCartFn={showCartFn}/>
   
-     <Generic className={classes.h1}/>
-     <Container>
-     <h2 className={classes.h2}>MUSIC</h2>
+     {/* <Generic className={classes.h1}/> */}
      <Outlet/>
-     </Container>
-    
     </div>
   
     </CartContextProvider>
@@ -57,6 +54,10 @@ const router=createBrowserRouter(
         path: "/about",
         element: <About/>,
         
+},{
+  path:'/home',
+  element:<Home/>
+  
 }
 ]
 }]

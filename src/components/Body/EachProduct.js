@@ -1,6 +1,6 @@
 import React,{useContext} from 'react';
-import classes from '../App.module.css';
-import CartContext from './store/CartContext';
+import classes from '../../App.module.css';
+import CartContext from '../store/CartContext';
 import{ListGroup,Image,Button,Container } from 'react-bootstrap'
 
 const EachProduct = (props) => {
