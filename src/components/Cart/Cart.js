@@ -15,17 +15,19 @@ const Cart = (props) => {
 
 
       <div className={classes.imgcont}>
-      <h4>ITEM</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.length>0?(<><h4>ITEM</h4><div style={{borderBottom:'1px solid black'}}></div></>):''}
       {cartContext.items.map((e,i)=><img src={e.imageUrl} key={i} className={classes.img}/>)}
       </div>
 
       <div className={classes.price}>
-      <h4>PRICE</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.length>0?(<><h4>PRICE</h4><div style={{borderBottom:'1px solid black'}}></div></>):''}
+
       {cartContext.items.map((e,i)=><div key={i} className={classes.price1}>$ {e.price}</div>)}
       </div>
 
       <div className={classes.quantity}>
-      <h4>QUANTITY</h4><div style={{borderBottom:'1px solid black'}}></div>
+      {cartContext.items.length>0?(<><h4>ITEM</h4><div style={{borderBottom:'1px solid black'}}></div></>):''}
+
       {cartContext.items.map((e,i)=>
       <div key={i} className={classes.quantity1}>
       <form>

@@ -4,7 +4,9 @@ import Generic from '../Generic/Generic';
 
 const About = () => {
   return (
-    <><Generic/>
+    <>
+    
+    <Generic/>
     <Card style={{ width:'80%',margin:'auto'}}>
     <Card.Title style={{fontFamily:'Metal Mania', textAlign:'center',fontSize:'30px'}}>ABOUT</Card.Title>
 

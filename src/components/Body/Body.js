@@ -10,7 +10,9 @@ const Counter=(props)=>{
 
     return(
 
-        <><Generic/>
+        <>
+
+        <Generic/>
         <Container>
         
           <h2 style={{
